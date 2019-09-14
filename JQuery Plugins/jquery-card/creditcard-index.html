@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style></style>
+    <script type="text/javascript" src="file:///home/gamer/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="file:///home/gamer/bower_components/card/lib/js/jquery.card.js"></script>
+  </head>
+  
+  <body>
+  
+    <div class='card'>
+    <form action="">
+        <p class="small">Start typing in here to take over and try it out</p>
+        
+        <div><input type="text" name="number" placeholder="Card number"></div>
+        <div><input type="text" name="name" placeholder="Full Name"></div>
+        <div><input type="text" name="expiry" placeholder="MM/YY"></div>
+        <div><input type="text" name="cvc" placeholder="CVC"></div>
+   </form>
+   </div>
+   <script>
+       
+    
+    var card = new Card({
+    form: 'form',
+    container: '.card',
+
+    placeholders: {
+    number: '**** **** **** ****',
+    name: 'Arya Stark',
+    expiry: '**/**',
+    cvc: '***'
+    }
+    
+
+});
+
+</script>
+</body>
+</html>
