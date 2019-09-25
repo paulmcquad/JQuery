@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  ul {width:200px;font-family:arial;}
+  ul li {border-bottom:1px solid #333;}
+  ul li a {text-decoration:none;}
+  </style>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+  <script>
+  $(document).ready(function() {
+    $('ul li:first').css('border','none');
+    $('ul li:last').css('border','none');
+  });
+  </script>
+
+  <body>
+    <div id='sidebar'>
+    <h1>My sidebar</h1>
+    <ul>
+      <li><a href='/index'>Home</a></li>
+      <li><a href='/about'>About Us</a></li>
+      <li><a href='/customer-service'>Customer Service</a></li>
+      <li><a href='/contact'>Contact Us</a></li>
+      <li><a href='/coupons'>Coupons</a></li>
+    </ul>
+    </div>
+  </body>
+</html>

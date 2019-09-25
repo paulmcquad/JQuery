@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+    .google-icon {background:url(images/google_icon.jpg) no-repeat;padding:0px 30px;}
+  </style>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+  <script>
+  $(document).ready(function() {
+    $('ul li a[href*="google.com"]').addClass('google-icon');
+  });
+  </script>
+
+  <body>
+    <ul>
+      <li><a href='http://www.google.com/analytics'>Google Analytics</a></li>
+      <li><a href='http://www.yahoo.com/sports'>Yahoo Sports</a></li>
+    </ul>
+  </body>
+</html>

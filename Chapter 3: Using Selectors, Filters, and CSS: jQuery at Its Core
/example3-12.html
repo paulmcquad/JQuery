@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+  <script>
+  $(document).ready(function() {
+    $('.error:empty').css('display','none');
+  });
+  </script>
+
+  <body>
+    <div id='main'>
+      <div class='error'></div>
+      <div class='error'>This is my error message</div>
+      <div class='content'>
+      <p>This is my content</p>
+      </div>
+      <div class='alternate'>
+      <p>This is alternate content.</p>
+      </div>
+    </div>
+  </body>
+</html>

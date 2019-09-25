@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  .bird {border:1px solid #ccc;width:200px;margin:5px;}
+  </style>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+  <script>
+  $(document).ready(function() {
+    $('div[id$="bird"]').addClass('bird');
+  });
+  </script>
+
+  <body>
+    <div id='red-bird'>red</div>
+    <div id='blue-bird'>blue</div>
+    <div id='green-bird'>green</div>
+    <div id='black-bird'>black</div>
+  </body>
+</html>
