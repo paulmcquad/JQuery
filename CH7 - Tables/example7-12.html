@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body{font-family:arial;font-size:12px;}
+  .selected {background:blue;font-weight:bold;font-size:14px;}
+  .special {background:#6AAF18;text-align:center;font-size:22px;color:#fff;font-weight:bold;}
+  th{background:#85B70C;}
+  table, #data {border:1px solid #999;width:500px;}
+  tr td, tr th, #data tr td {padding:5px;}
+  tr td {border:1px solid #dedede;}
+  #nav {margin:10px 0;}
+  #nav a {text-decoration:none;color:#1759A3;padding:3px;}
+  .active {background:#1759A3;color:#fff !important;font-weight:bold;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+	
+	$('#data').after('<div id="nav"></div>');
+	
+	var rowsShown = 4;
+	var rowsTotal = $('table tr').length;
+	var numPages = Math.round(rowsTotal/rowsShown);
+
+	for(i = 0;i<numPages;i++) {
+		var pageNum = i + 1;
+		$('#nav').append('<a href="#" rel="'+i+'">'+pageNum+'</a> ');
+	}
+	
+	$('#data tr').hide();
+	$('#data tr:first').show();
+    $('#data tr').slice(0, rowsShown).show();  
+    
+    $('#nav a:first').addClass('active');
+    
+    $('#nav a').bind('click', function(){
+    	$('#nav a').removeClass('active');
+    	$(this).addClass('active');
+    	var currPage = $(this).attr('rel');
+    	var startItem = currPage * rowsShown;
+    	var endItem = startItem + rowsShown;
+    	//console.log(endItem);
+    	
+    	$('#data tr').css('opacity','0.0').hide().slice(startItem, endItem).css('display','table-row').animate({opacity:1}, 300, function (){
+    	
+    });
+
+    });
+	
+	});
+</script>
+
+
+  <body>
+    <div class="container">
+	<table border="0" cellpadding="0" cellspacing="0">
+    		<tr>
+    		<th>Item #</th>
+			<th>Category</th>
+			<th>Product</th>
+			<th>Price</th>
+			<th>Status</th>
+		</tr>
+	</table>
+
+	<table border="0" cellpadding="0" cellspacing="0" id="data">
+
+		<tr>
+			<td>1</td>
+			<td>Clothing</td>
+			<td>North Face Jacket</td>
+			<td>$189.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Shoes</td>
+			<td>Nike</td>
+			<td>$59.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Electronics</td>
+			<td>LED TV</td>
+			<td>$589.99</td>
+			<td>Out of stock</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Sporting Goods</td>
+			<td>Ping Golf Clubs</td>
+			<td>$159.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Clothing</td>
+			<td>Sweater</td>
+			<td>$19.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Clothing</td>
+			<td>North Face Jacket</td>
+			<td>$189.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Shoes</td>
+			<td>Nike</td>
+			<td>$59.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Electronics</td>
+			<td>LED TV</td>
+			<td>$589.99</td>
+			<td>Out of stock</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>Sporting Goods</td>
+			<td>Ping Golf Clubs</td>
+			<td>$159.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>Shoes</td>
+			<td>Nike</td>
+			<td>$59.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>Electronics</td>
+			<td>LED TV</td>
+			<td>$589.99</td>
+			<td>Out of stock</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>Sporting Goods</td>
+			<td>Ping Golf Clubs</td>
+			<td>$159.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>Electronics</td>
+			<td>LED TV</td>
+			<td>$589.99</td>
+			<td>Out of stock</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>Sporting Goods</td>
+			<td>Ping Golf Clubs</td>
+			<td>$159.99</td>
+			<td>In-stock</td>
+		</tr>
+	</table>
+     
+        
+    </div>   
+  </body>
+</html>

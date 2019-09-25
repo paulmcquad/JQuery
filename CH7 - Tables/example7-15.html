@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  .selected {background:blue;font-weight:bold;font-size:14px;}
+  </style>
+  <link href="css/visualize.css" rel="stylesheet" type="text/css" media="all"/>
+  <link href="css/visualize-light.css" rel="stylesheet" type="text/css" media="all"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/visualize.js"></script>		
+
+  	<script type="text/javascript">
+ 
+$(document).ready(function(){
+$('table').visualize({type:'bar'});
+}); 
+</script>
+
+
+  <body>
+    <div class="container">
+
+	<table border="1" cellpadding="4">
+	<caption>2010 Traffic</caption>
+	<thead>
+		<tr>
+			<td></td>
+			<th scope="col">New Visits</th>
+			<th scope="col">Return Visits</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th scope="row">Music</th>
+			<td>1000</td>
+			<td>3500</td>
+		</tr>
+		<tr>
+			<th scope="row">Sports</th>
+			<td>1432</td>
+			<td>4633</td>
+		</tr>
+		<tr>
+			<th scope="row">Clothing</th>
+			<td>1834</td>
+			<td>8503</td>
+		</tr>
+		<tr>
+			<th scope="row">Art</th>
+			<td>2543</td>
+			<td>3472</td>
+		</tr>
+		<tr>
+			<th scope="row">Shoes</th>
+			<td>4632</td>
+			<td>8493</td>
+		</tr>
+		</tbody>
+	</table>
+     
+        
+    </div>   
+  </body>
+</html>

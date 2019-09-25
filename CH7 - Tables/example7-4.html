@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body{font-family:arial;font-size:12px;}
+  .selected {background:blue;font-weight:bold;font-size:14px;}
+  .special {background:#6AAF18;text-align:center;font-size:22px;color:#fff;font-weight:bold;}
+  th{background:#85B70C;}
+  table {border:1px solid #999;width:500px;}
+  tr td, tr th {padding:5px;}
+  tr td {border:1px solid #dedede;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+		$('tr').hover(function() {
+			$(this).css('background','pink');
+			
+			
+		}, function() {
+			$(this).css('background','white');
+		});
+	});
+
+</script>
+
+
+  <body>
+    <div class="container">
+
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<th>Category</th>
+			<th>Product</th>
+			<th>Price</th>
+			<th>Status</th>
+		</tr>
+		<tr>
+			<td>Clothing</td>
+			<td>North Face Jacket</td>
+			<td>$189.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Shoes</td>
+			<td>Nike</td>
+			<td>$59.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Electronics</td>
+			<td>LED TV</td>
+			<td>$589.99</td>
+			<td>Out of stock</td>
+		</tr>
+		<tr>
+			<td>Sporting Goods</td>
+			<td>Ping Golf Clubs</td>
+			<td>$159.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Clothing</td>
+			<td>Sweater</td>
+			<td>$19.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Clothing</td>
+			<td>North Face Jacket</td>
+			<td>$189.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Shoes</td>
+			<td>Nike</td>
+			<td>$59.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Electronics</td>
+			<td>LED TV</td>
+			<td>$589.99</td>
+			<td>Out of stock</td>
+		</tr>
+		<tr>
+			<td>Sporting Goods</td>
+			<td>Ping Golf Clubs</td>
+			<td>$159.99</td>
+			<td>In-stock</td>
+		</tr>
+		<tr>
+			<td>Clothing</td>
+			<td>Sweater</td>
+			<td>$19.99</td>
+			<td>In-stock</td>
+		</tr>
+
+	</table>
+     
+        
+    </div>   
+  </body>
+</html>
