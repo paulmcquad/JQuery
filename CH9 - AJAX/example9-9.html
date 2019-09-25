@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>jQuery Dynamic Content</title>
+<style>
+body {font-family:georgia;font-size:12px;}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+$('#submit').bind('click', function(){
+var nameVal = $('#name').val();
+var emailVal = $('#email').val();
+var phoneVal = $('#phone').val();
+var msgVal = $('#message').val();
+
+$.get("form.php",{name:nameVal, phone:phoneVal, email:emailVal, message:msgVal});
+
+});	
+});
+</script>
+</head>
+<body>
+
+<form id="contact-form">
+	<ul>
+		<li><label>Name</label>
+		<input type="text" id="name" name="name"/>
+		</li>
+		<li><label>Email</label>
+		<input type="text" id="email" name="email"/>
+		</li>
+		<li><label>Phone</label>
+		<input type="text" id="phone" name="phone"/>
+		</li>		
+		<li><label>Message</label>
+		<textarea name="message" id="message"></textarea>
+		</li>		
+		<li><input type="submit" id="submit"/></li>
+	</ul>
+</form>
+
+</body>
+</html>

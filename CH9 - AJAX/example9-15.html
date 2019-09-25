@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>jQuery Ajax JSON</title>
+<style>
+body {font-family:georgia;font-size:12px;}
+#books {
+border:1px solid #E77D2C;
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px;
+width:400px;
+list-style-type:none;
+margin:0;
+padding:0;
+}
+#books li {
+padding:5px;
+}
+#books h1 {
+font:14px georgia;
+padding:5px;
+color:#fff;
+background:#E77D2C;
+margin:0;
+}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {      
+
+$.ajax({  
+type: "GET",
+dataType: "json",  
+url: "favoritebooks.js",
+success: parseJSON  
+}); 
+        
+
+function parseJSON(data){
+$.each(data.books, function(i,item){
+$('<li></li>').html('<b>Title:</b> '+item.title +'</br><b>Author</b>: '+ item.author +'</br>'+item.category +' - '+item.pubdate).appendTo('#books');  
+});
+}
+      
+           
+  
+  
+
+});
+</script>
+</head>
+<body>
+<ul id="books">
+<h1>My Favorite Books</h1>
+</ul>
+</body>
+</html>

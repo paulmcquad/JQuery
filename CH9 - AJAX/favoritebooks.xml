@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ReadingList>
+<Book author="Bill Bryson">
+<Title>I'm a Stranger Here Myself: Notes on Returning to America After 20 Years Away</Title>
+<Category>Travel</Category>
+<PubDate>06/2000</PubDate>
+<ISBN>0767903820</ISBN>
+</Book>
+<Book author="Andre Agassi">
+<Title>Open: An Autobiography</Title>
+<Category>Biography</Category>
+<PubDate>11/2009</PubDate>
+<ISBN>0307268198</ISBN>
+</Book>
+<Book author="Guy Kawasaki">
+<Title>The Art of the Start: The Time-Tested, Battle-Hardened Guide for Anyone Starting Anything</Title>
+<Category>Business</Category>
+<PubDate>09/2004</PubDate>
+<ISBN>1591840565</ISBN>
+</Book>
+<Book author="Jessica Livingston">
+<Title>Founders at Work: Stories of Startups' Early Days</Title>
+<Category>Business</Category>
+<PubDate>09/2009</PubDate>
+<ISBN>1430210788</ISBN>
+</Book>
+<Book author="Jason Fried">
+<Title>Getting Real: The smarter, faster, easier way to build a successful web application</Title>
+<Category>Business</Category>
+<PubDate>09/2009</PubDate>
+<ISBN>0578012810</ISBN>
+</Book>
+</ReadingList>
+
+

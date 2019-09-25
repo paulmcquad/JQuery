@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>jQuery Ajax NyTimes</title>
+<style>
+body {font-family:georgia;font-size:12px;}
+.widget {
+border:1px solid #1179CB;
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px;
+width:200px;
+}
+.widget h1 {
+font:14px georgia;
+padding:5px;
+color:#fff;
+background:#1179CB url(images/delicious_32.png) 2px 5px no-repeat;
+text-indent:20px;
+height:20px;
+margin:0;
+}
+#news-feed {
+list-style-type:none;
+margin:0;
+padding:0;
+}
+#news-feed li {
+padding:5px;
+}
+a {color:#1179CB;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+var query = "http://feeds.delicious.com/v2/json/jakerutter?count=10";            
+            
+            
+        $.ajax({  
+        	type: "GET",
+            dataType: "jsonp",  
+            url: query,
+            success: parseData  
+        });  
+
+
+function parseData(data) {  
+         $.each(data, function(i, item) {  
+    	$('<li></li>').html("<a href='"+item.u+"'>"+item.d+"</a>").appendTo('#news-feed');  
+  });  
+  }
+  
+	// set variables here
+	var newsLength = 5;
+	var newsInterval = 2000;
+	
+	function slideArticle() {
+	$('#news-feed li:last').clone().prependTo('#news-feed').css('display','none');
+	$('#news-feed li:first').fadeIn(1000).slideDown(500);
+	$('#news-feed li:last').fadeOut().remove();
+	} 
+
+	setInterval(slideArticle, newsInterval);
+
+  
+
+});
+</script>
+</head>
+<body>
+<div class="widget">
+<h1>My Delicious Feed</h1>
+<ul id="news-feed"></ul>
+</div>
+</body>
+</html>

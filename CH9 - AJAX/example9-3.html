@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+<title>jQuery Dynamic Content</title>
+<style>
+body {font-family:georgia;font-size:12px;}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#content').load('ajax-content.html', function(responseText, textStatus, XMLHttpRequest)
+	{
+	console.log(XMLHttpRequest.status);
+	if (XMLHttpRequest.status == 404 || XMLHttpRequest.status == 500) {
+	$('#content').html('There has been an error, please try again later.');
+	}
+	else {
+	}
+	});	
+});
+</script>
+</head>
+<body>
+
+<div id="content"></div>
+
+</body>
+</html>
