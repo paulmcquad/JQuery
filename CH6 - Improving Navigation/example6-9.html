@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+  <link href="css/accordion.css" rel="stylesheet" type="text/css" media="all"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+	
+	$('.accordion-content').not(':first').hide();
+	
+	$('.accordion-content:first').show();
+	$('.accordion-header:first').addClass('header-active');	
+	$('.accordion-header:first').find('span').addClass('icon-active');
+
+	$('.accordion-header').click(function () {
+		$('.accordion-content:visible').slideUp('slow').prev().removeClass('header-active');
+		$('.icon-active:visible').removeClass('icon-active');
+		$(this).addClass('header-active').next().slideDown('slow');
+		$(this).find('span').addClass('icon-active');
+	});
+	
+  }); 
+</script>
+
+  <body>
+    <div class="container">
+
+    <div id="accordion"> 
+ 
+    		<div class="accordion-header"> 
+		    <h3>Books</h3> 
+		    <span></span>
+        	</div> 
+        	
+             <ul class="accordion-content"> 
+                <li><a href='#'>Business</a></li> 
+                <li><a href='#'>Education</a></li> 
+                <li><a href='#'>Tech</a></li> 
+                <li><a href='#'>Romance</a></li> 
+            </ul> 
+
+    		<div class="accordion-header"> 
+		    <h3>Electronics</h3> 
+		    <span></span>
+        	</div> 
+        	
+             <ul class="accordion-content"> 
+                <li><a href='#'>Audio</a></li> 
+                <li><a href='#'>Video</a></li> 
+                <li><a href='#'>Automobile</a></li> 
+                <li><a href='#'>Appliances</a></li> 
+            </ul>            
+
+    		<div class="accordion-header"> 
+		    <h3>Sporting Goods</h3> 
+		    <span></span>
+        	</div> 
+        	
+             <ul class="accordion-content"> 
+                <li><a href='#'>Baseball</a></li> 
+                <li><a href='#'>Basketball</a></li> 
+                <li><a href='#'>Football</a></li> 
+                <li><a href='#'>Tennis</a></li> 
+            </ul>  
+       </div>    
+    </div>   
+  </body>
+</html>

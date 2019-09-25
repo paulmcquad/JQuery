@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+  <link href="css/dropdownv1.css" rel="stylesheet" type="text/css" media="all"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+		$('ul#navigation li').hover(function() {
+			$(this).find('.subnav').slideDown('slow');
+			$(this).closest('a').addClass('active');
+			
+			
+		}, function() {
+			$(this).find('.subnav').slideUp('fast');
+			$(this).find('a').removeClass("active");
+		});
+  }); 
+  
+    $(document).ready(function(){
+     
+ // Main Navigation Highlight Script
+ 
+ var path = location.pathname;
+ var pathArray = path.split('/');
+ console.log(pathArray);
+ var pArrLength = pathArray.length;
+ console.log(pArrLength);
+ 
+ for(i=0; i < pArrLength; i++) {
+ 	$("a[href*='"+pathArray[i]+"']").addClass("selected");
+ }
+
+}); 
+</script>
+</script>
+
+
+  <body>
+    <div class="container">
+
+	<div id="header">      
+      <ul id="navigation">
+      	<li><a href="/test/example-dropdown.html">Home</a></li>
+      	<li><a href="#">Our Work</a>
+      	    <ul class="subnav">
+      			<li><a href="example-dropdown.html">Example 1</a></li>
+      			<li><a href="#">Example 2</a></li>
+      			<li><a href="#">Example 3</a></li>
+      		</ul>
+      	</li>
+      	<li><a href="#">Services</a>
+      	    <ul class="subnav">
+      			<li><a href="#">Service 1</a></li>
+      			<li><a href="#">Service 2</a></li>
+      			<li><a href="#">Service 3</a></li>
+      		</ul>      	
+      	</li>
+      	<li><a href="#">About Us</a></li>
+      	<li><a href="#">Contact</a></li>
+      </ul>
+     </div>
+     
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta velit non tortor consequat ut egestas ligula rutrum. Nullam dolor turpis, elementum non ultrices et, dictum consequat augue. Cras in tellus ut erat commodo gravida id quis dui. Aenean ac tortor est. Suspendisse potenti. Nunc elit velit, faucibus ac pretium vitae, hendrerit ut eros. Nulla sollicitudin, tellus at vulputate accumsan, mauris purus interdum risus, sed ultricies diam purus ac dui. Sed quis ipsum augue, in mattis enim. Vivamus magna lacus, vehicula in porttitor non, iaculis quis nisl. Ut sed enim nulla. Quisque sagittis, nisi eu pulvinar sollicitudin, lectus sem molestie augue, id varius nulla orci quis risus. Aenean convallis orci non dolor malesuada luctus. Nulla ac justo hendrerit nulla sagittis feugiat. Maecenas dui tortor, pellentesque a porttitor a, blandit a libero. Quisque egestas mi condimentum felis fermentum consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam posuere blandit felis, vitae ornare nulla viverra vitae. Nunc dapibus faucibus massa ac fermentum. Ut quis dui sapien, nec convallis neque. Cras quis sollicitudin tellus.</p>
+
+<p>Pellentesque tristique ullamcorper orci, at suscipit neque imperdiet sit amet. Donec congue feugiat nisl, ac malesuada massa interdum sed. Donec eget mi sit amet ante venenatis consectetur. Pellentesque libero sapien, blandit ut pharetra non, congue nec mi. Curabitur ut eros massa. Cras ornare tempor commodo. Sed ipsum nibh, ultricies et commodo id, dictum sit amet felis. Nullam accumsan arcu eu sem ultrices sed suscipit lorem cursus. In semper turpis a neque egestas tempus. Nam lobortis bibendum justo, sit amet luctus nisi vestibulum et. Donec ac tellus turpis. Nunc non nunc quis turpis rutrum eleifend. Suspendisse augue metus, euismod id luctus non, condimentum eu nibh. Nulla non tortor sapien. Quisque at nisi sapien.
+
+</p>
+    
+    </div>   
+  </body>
+</html>

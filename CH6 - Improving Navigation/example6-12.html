@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+  <link href="css/tabnav.css" rel="stylesheet" type="text/css" media="all"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+	
+	$('.tab:first').show()	
+	$('#tabs li a:first').addClass('tab-active');
+	
+	
+	$("#tabs li a").hover(
+  	function () {
+    $(this).animate({left:20}, 300, function (){
+    	$(this).animate({left:0}, 50);
+    });
+  }, 
+  function () {
+  }
+);
+
+	$('ul#tabs li a').bind('click',function () {
+		var linkIndex = $('ul#tabs li a').index(this);
+		$('ul#tabs li a').removeClass('tab-active');
+		$(".tab:visible").hide();
+		$(".tab:eq("+linkIndex+")").show();
+		$(this).addClass('tab-active');
+		return false;
+	});
+	
+  }); 
+</script>
+
+  <body>
+    <div class="container">
+	
+		<ul id="tabs" class="clearfix">
+			<li><a href="">Home</a></li>
+			<li><a href="">Shop</a></li>
+			<li><a href="">Community</a></li>
+			<li><a href="">Customer Service</a></li>
+			<li><a href="">About</a></li>
+		</ul>
+		
+		<div class="tab-content">
+			<div class="tab">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod nunc id mauris placerat iaculis. Integer viverra velit eros, sed semper ante. Ut at turpis in tellus tincidunt dignissim non vitae felis. Donec nec sem ut est tincidunt ullamcorper. Donec lorem erat, varius eget tempus vel, pulvinar eu massa. Duis eget lacus vel sem gravida sodales eu nec ipsum. Donec vitae est augue, vitae sollicitudin elit. Quisque at arcu at eros sollicitudin sagittis id sed dui. Suspendisse est quam, pretium ut gravida a, porta non urna. Pellentesque eu eleifend justo. Pellentesque ut eros quam, nec venenatis est. Etiam leo sem, pretium tempus bibendum molestie, tincidunt et turpis. Nulla venenatis ante blandit libero commodo imperdiet.
+
+			</div>
+			
+			<div class="tab">
+			<p>Ut pretium luctus est in porta. Aliquam a mi vel nunc sagittis varius vitae quis eros. Duis luctus semper faucibus. Pellentesque magna nisi, lacinia ac fermentum ac, lobortis sodales lorem. Nunc lacus libero, sodales at gravida eget, laoreet quis lorem. Praesent metus libero, euismod in vulputate ac, pulvinar sed ante. Sed facilisis sollicitudin adipiscing. Cras vel lacus ipsum, eu vulputate lacus. Vestibulum eros leo, sagittis nec dapibus ut, tincidunt ac magna. Fusce suscipit auctor lacinia.
+			</div>
+			
+			<div class="tab">
+			<p>Mauris at risus nibh, ut gravida orci. Vivamus rutrum scelerisque volutpat. Nam eu felis nisl, eget cursus ipsum. Sed tincidunt felis in nisi pharetra accumsan. Donec sagittis posuere lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean nibh tellus, interdum eu mollis et, mollis vel metus. Ut eleifend nulla sagittis risus adipiscing tempor. Vivamus blandit ipsum vitae felis blandit sit amet interdum tellus blandit. Morbi enim augue, gravida ut commodo at, consequat vitae diam. Quisque eget ante diam. Nullam mauris ante, mattis a fringilla id, sollicitudin id orci. Vivamus dictum bibendum nunc eu fermentum. Nulla tincidunt risus vel massa euismod sed interdum lectus tincidunt. Donec ut nisi quam. Vestibulum mauris purus, feugiat eget semper nec, facilisis eget elit.
+			</div>
+			
+			<div class="tab">
+			<p>Ut pretium luctus est in porta. Aliquam a mi vel nunc sagittis varius vitae quis eros. Duis luctus semper faucibus. Pellentesque magna nisi, lacinia ac fermentum ac, lobortis sodales lorem. Nunc lacus libero, sodales at gravida eget, laoreet quis lorem. Praesent metus libero, euismod in vulputate ac, pulvinar sed ante. Sed facilisis sollicitudin adipiscing. Cras vel lacus ipsum, eu vulputate lacus. Vestibulum eros leo, sagittis nec dapibus ut, tincidunt ac magna. Fusce suscipit auctor lacinia.
+			</div>
+			
+			<div class="tab">
+			<p>Mauris at risus nibh, ut gravida orci. Vivamus rutrum scelerisque volutpat. Nam eu felis nisl, eget cursus ipsum. Sed tincidunt felis in nisi pharetra accumsan. Donec sagittis posuere lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean nibh tellus, interdum eu mollis et, mollis vel metus. Ut eleifend nulla sagittis risus adipiscing tempor. Vivamus blandit ipsum vitae felis blandit sit amet interdum tellus blandit. Morbi enim augue, gravida ut commodo at, consequat vitae diam. Quisque eget ante diam. Nullam mauris ante, mattis a fringilla id, sollicitudin id orci. Vivamus dictum bibendum nunc eu fermentum. Nulla tincidunt risus vel massa euismod sed interdum lectus tincidunt. Donec ut nisi quam. Vestibulum mauris purus, feugiat eget semper nec, facilisis eget elit.
+			</div>
+			
+			<div class="tab">
+			<p>Mauris at risus nibh, ut gravida orci. Vivamus rutrum scelerisque volutpat. Nam eu felis nisl, eget cursus ipsum. Sed tincidunt felis in nisi pharetra accumsan. Donec sagittis posuere lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean nibh tellus, interdum eu mollis et, mollis vel metus. Ut eleifend nulla sagittis risus adipiscing tempor. Vivamus blandit ipsum vitae felis blandit sit amet interdum tellus blandit. Morbi enim augue, gravida ut commodo at, consequat vitae diam. Quisque eget ante diam. Nullam mauris ante, mattis a fringilla id, sollicitudin id orci. Vivamus dictum bibendum nunc eu fermentum. Nulla tincidunt risus vel massa euismod sed interdum lectus tincidunt. Donec ut nisi quam. Vestibulum mauris purus, feugiat eget semper nec, facilisis eget elit.
+			</div>
+		</div>
+    </div>   
+  </body>
+</html>

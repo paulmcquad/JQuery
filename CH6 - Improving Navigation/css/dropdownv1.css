@@ -1,0 +1,89 @@
+/* 
+Smashing jQuery Dropdown Styles
+Author: Jake Rutter
+*/
+
+/* ---------- YUI Reset ---------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+.container {
+	width: 950px;
+	margin: 10px auto;
+	font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border: 1px solid #333;
+}
+p {margin: 10px;}
+
+/* Navigation */
+ul#navigation {
+	list-style-type: none;
+	background: #CE0100;
+	height: 63px;
+	font-size: 24px;
+}
+
+ul#navigation li {
+	float: left;
+	width: 175px;
+	text-align: center;
+	position: relative;
+	height: 63px;
+	padding: 20px 5px 10px 5px;
+}
+
+ul#navigation li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+ul#navigation li a.active {
+	border: 1px solid blue;
+}
+
+ul#navigation li ul.subnav {
+	background: #E7F1D2;
+	width: 175px;
+	clear: both;
+	display: none;
+	position: absolute;
+	top: 63px;
+	-moz-border-radius-bottomleft: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border-left: 2px solid #998;
+	border-right: 2px solid #998;
+	border-bottom: 2px solid #998;
+	list-style-type: none;
+}
+
+ul#navigation li ul.subnav li {
+	clear: both;
+	height: 40px;
+	padding: 0;
+	text-align: center;
+	margin: 0px;
+}
+
+ul#navigation li ul.subnav li a {
+	background: none;
+	font-size: 18px;
+	color: #333;
+	text-decoration: none;
+	padding: 10px 0;
+	border: none;
+}
+
+ul#navigation li ul.subnav li a:hover {
+	background: #DBF1AD;
+	font-size: 18px;
+	color: #333;
+	border: none;
+}
