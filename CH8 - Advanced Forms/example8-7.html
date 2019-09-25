@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>jQuery Form validation</title>
+<style>
+.error, .notice, .success {
+	padding: .8em;
+	margin-bottom: 1em;
+	border: 2px solid #ddd;
+}
+
+.error {
+	background: #FBE3E4;
+	color: #8a1f11;
+	border-color: #FBC2C4;
+}
+
+.notice {
+	background: #FFF6BF;
+	color: #514721;
+	border-color: #FFD324;
+}
+
+.success {
+	background: #E6EFC2;
+	color: #264409;
+	border-color: #C6D880;
+}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var defaultText = "Search";
+
+$("#email-input").bind('focus', function(){
+
+		if ($(this).val() == defaultText) {
+		$(this).val('');
+		}
+		$(this).css('color', '#444')
+	 });
+	 
+$("#email-input").bind('blur', function(){
+		if ($(this).val() == '') {
+		$(this).val(defaultText)
+		}
+		$(this).css('color', '#444')
+	 });
+	 
+});	
+
+</script>
+</head>
+<body>
+<div id="email-form">
+ 	<input name="keyword" id="email-input" maxlength="20" type="text" value="Search"/> 
+ 	<input type="submit" value="Submit" id="email-submit"/>
+</div>
+
+</body>
+</html>

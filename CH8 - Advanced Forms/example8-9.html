@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>jQuery Form validation</title>
+<style>
+#form-fields {
+	list-style-type:none;
+	margin:10px 0 0;
+	padding:5px;
+	border:1px solid #green;
+}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$('#checkall').bind('click', function(){
+  var checkboxes = $('#form-fields li').find('.check');
+	if (this.checked) {
+	checkboxes.attr('checked', 'true'); 
+	} 
+	else {
+	checkboxes.attr('checked', ''); 
+	};
+  
+
+  
+});
+	 
+});	
+
+</script>
+</head>
+<body>
+<input type="checkbox" id="checkall" /> <label>Check all</label>
+<ul id="form-fields">
+ 	<li><input name="check1" class="check" type="checkbox"/> <label>Checkbox 1</label></li>
+ 	<li><input name="check2" class="check" type="checkbox"/> <label>Checkbox 2</label></li>
+ 	<li><input name="check2" class="check" type="checkbox"/> <label>Checkbox 3</label></li>
+ 	<li><input name="check2" class="check" type="checkbox"/> <label>Checkbox 4</label></li>
+ 	<li><input name="check2" class="check" type="checkbox"/> <label>Checkbox 5</label></li>
+ 	</ul>
+</div>
+
+</body>
+</html>

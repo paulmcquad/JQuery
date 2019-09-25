@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>jQuery Form validation</title>
+<style>
+#form-fields {
+	list-style-type:none;
+	margin:10px 0 0;
+	padding:5px;
+	border:1px solid #green;
+}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$('#copy-fields').bind('click', function(){
+	
+	var billFName = $('#b-first-name').val();
+	var billLName = $('#b-last-name').val();
+	
+	if (this.checked) {
+	$('#s-first-name').val(billFName);
+	$('#s-last-name').val(billLName);
+	
+  $('input[text]').change(function() {
+    $('#s-first-name').val(billFName);
+	  $('#s-last-name').val(billLName);
+});
+	
+	} 
+	else {
+	$('.shipping-address input').val('');
+	};
+
+
+	});
+	
+
+
+	 
+});	
+
+</script>
+</head>
+<body>
+<input type="checkbox" id="copy-fields"/>
+
+<div class="billing-address">
+<label>Copy Fields</label>
+<h2>Billing Address</h2>
+<label>First Name</label>
+<input type="text" id="b-first-name"/>
+
+<label>Last Name</label>
+<input type="text" id="b-last-name"/>
+</div>
+
+<div class="shipping-address">
+<h2>Shipping Address</h2>
+<label>First Name</label>
+<input type="text" id="s-first-name"/>
+
+<label>First Name</label>
+<input type="text" id="s-last-name"/>
+</div>
+
+
+</body>
+</html>

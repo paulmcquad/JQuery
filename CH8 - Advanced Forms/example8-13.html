@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>jQuery Form validation</title>
+<style>
+.error, .notice, .success {
+	padding: .8em;
+	margin-bottom: 1em;
+	border: 2px solid #ddd;
+}
+
+.error {
+	background: #FBE3E4;
+	color: #8a1f11;
+	border-color: #FBC2C4;
+}
+
+.notice {
+	background: #FFF6BF;
+	color: #514721;
+	border-color: #FFD324;
+}
+
+.success {
+	background: #E6EFC2;
+	color: #264409;
+	border-color: #C6D880;
+}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$("#email-form #email-submit").bind('click', function(){
+		
+	 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	 var email = $("#email-input").val();
+	 $('#email-form').prepend('<div class="error"></div>');
+	                 
+	 if(email == '') {
+	         $(".error").replaceWith('<div class="error">You forgot to enter an email address.</div>');
+	 } else if(!emailReg.test(email)) {
+	         $(".error").replaceWith('<div class="error">Please enter a valid email address.</div>');
+	 } else {
+	         
+		  	$("#email-form").html('<div class="success">Thank you, you have been subscribed.</div>');	 
+		  	}
+		 return false;
+	 });
+});	
+
+</script>
+</head>
+<body>
+<div id="email-form">
+ 	<input type="text" id="email-input"/>
+ 	<input type="submit" value="Submit" id="email-submit"/>
+</div>
+
+</body>
+</html>

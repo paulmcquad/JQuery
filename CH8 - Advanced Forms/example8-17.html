@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>jQuery qTip</title>
+
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	// Form tooltip  
+	$('input[title]').qtip({ 
+	style: { color: 'black', name: 'blue', tip: true },
+	position: { corner: { target: 'bottomMiddle' }},
+	show: { when: { event: 'focus' }},
+	hide: { when: { event: 'blur' }}
+	});
+
+});	
+
+</script>
+</head>
+<body>
+ 	
+ 	<input type="text" id="email" title="Please enter your email address."/>
+
+</body>
+</html>

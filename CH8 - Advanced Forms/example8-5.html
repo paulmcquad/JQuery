@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>jQuery Form validation</title>
+<style>
+.highlight {background:yellow;padding:3px;border:1px dotted red;}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$('input').bind('focus', function(){
+	$(this).addClass('highlight');
+});
+
+$('input').bind('blur', function(){
+	$(this).removeClass('highlight');
+});
+	 
+});	
+
+</script>
+</head>
+<body>
+
+<input type="text" id="email" />
+<input type="text" id="name" />
+
+</body>
+</html>
