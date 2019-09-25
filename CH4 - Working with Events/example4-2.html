@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script>
+  var imgArray = 
+["loc_portrait1.jpg",
+"loc_portrait2.jpg",
+"loc_portrait3.jpg",
+"loc_portrait4.jpg",
+"loc_portrait5.jpg"];
+
+var imgArrLength = imgArray.length;
+var i = 0;
+  for (i=0;i < imgArrLength;i++) {
+  console.log(i);
+   $('<img />').attr({'src':'images/'+imgArray[i], 'class':'img'+[i]}).load(function(){
+        $('.gallery').append($(this));
+    });
+  }
+  
+  
+
+  </script>
+  <body>
+    <div class="container">
+      <h1>Hello jQuery.</h1>
+      <div class="gallery"></div>
+    </div>
+  </body>
+</html>
+
+

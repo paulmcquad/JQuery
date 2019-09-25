@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;background:#999;}
+  .container {width:800px;padding:5px;background:#fff;}
+  .product {width:300px;border:3px solid #ccc;padding:5px;}
+  .cart {width:800px;border:2px solid #ccc;;margin:0 0 10px;}
+  .add-to-cart {border:1px solid #333;background:#333;color:#fff;padding:3px;cursor:pointer;}
+  .success {background: #E6EFC2;color: #264409;border:2px solid #C6D880;padding:8px;}
+  p.toolTip {background:efefef;}
+  .clear {clear:both;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script>
+
+$(document).ready(function(){
+  $('.product').bind({
+  mousedown : function() {
+	$(this).css('border','3px solid red');
+  }, 
+  mouseup: function() {
+	$(this).css('border','3px solid #ccc');
+	$('.cart').append('Apple iPhone 4 is now in the cart<br>');
+	$('.cart h2').text('Shopping Cart contains 1 item!');
+	$(this).hide();
+  }
+  });
+});
+
+  </script>
+  <body>
+    <div class="container">
+      <h1>Hello jQuery.</h1>
+      <div class="cart">
+      <h2>Shopping Cart</h2>
+      
+      </div>
+		<div class="product">
+		<h3>Apple iPhone 4</h3>
+		<div class="product-image"><img src="images/iphone.jpg" title="Steve Jobs holds up the newest iPhone 4."></div>
+		<p class="info">iPhone 4 is a GSM cell phone with a high-resolution display, FaceTime video calling, HD video recording, a 5-megapixel camera, and more.</p>
+		<p class="price">$299.99</p>
+		<div class="add-to-cart">Double-click to buy me</div>
+		</div>
+    </div>   
+  </body>
+</html>
+
+
+
+

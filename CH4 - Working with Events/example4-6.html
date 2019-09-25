@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;}
+  .content {display:none;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+   <script>
+$(document).ready(function(){
+  $('a').click(function() {
+    $('.content').toggle();
+    return false;
+  });  
+});  
+  </script>
+  <body>
+    <div class="container">
+      <h1>Hello jQuery.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida rhoncus commodo. Aenean sit amet augue iaculis sem consectetur accumsan vitae a arcu. Quisque quam diam, sollicitudin vel porta eget, vestibulum id justo. Vestibulum mattis metus sed lorem adipiscing facilisis. Vestibulum sed ipsum ut nibh rutrum ultricies. Vivamus porttitor, enim id ornare ultrices, ante neque auctor eros, non posuere neque risus sit amet dolor. Curabitur mattis laoreet varius. Ut fermentum ipsum placerat ipsum ultrices aliquet. Ut commodo vulputate nisl, sed porta erat iaculis nec. Nullam vitae orci a sem aliquet fringilla.</p>
+      <a href="#" class="content-link">Show More</a>
+      <div class="content">
+      <p>Donec diam nisi, auctor sed tristique eget, pellentesque nec nisi. Sed vel libero ipsum. Quisque semper, lectus in pulvinar tristique, nibh urna scelerisque augue, at varius justo metus in orci. Suspendisse pretium arcu nec enim lacinia id cursus diam rhoncus. Praesent pulvinar volutpat luctus. Vivamus cursus adipiscing tellus, id fermentum turpis egestas lacinia. Aliquam tristique porttitor quam at pretium. In ornare aliquet iaculis. Phasellus sit amet leo id urna tincidunt fringilla. Nullam ut fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc leo arcu, sagittis eget volutpat at, bibendum at elit. Vestibulum a nisi nec felis malesuada fringilla. Quisque vitae mauris nec sapien porta pharetra eu vitae sapien. Cras bibendum eleifend malesuada.</p>
+      </div>
+    </div>   
+  </body>
+</html>
+
+
