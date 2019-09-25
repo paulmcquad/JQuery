@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;font-size:12px;}
+  #news-feed {background:#E9F7D4;border:1px solid #77A134;width:300px;list-style-type:none;padding:0;margin:0;height:235px;overflow:hidden;}
+  ul#news-feed li {padding:10px 5px;border-bottom:1px solid #77A134;margin-bottom:5px;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  	
+
+$(document).ready(function(){
+
+	var newsArray = ["Delhomme, Wallace sharp early for Browns","Bucs expect to have injured QB Freeman for opener","Report: Haynesworth likely has rhabdomyolysis","QB Orton effectively leading Broncos in preseason","Vernon Gholston not offended by set-up fight","Cubs' Piniella to retire after Sunday","Bradley interested in Aston Villa job","Federer beats Fish for Cincinnati title","Garcia 3-hits Giants, Cardinals roll 9-0", "Cano, CC power Yankees over M's 10-0"];
+	
+	// set variables here
+	var newsLength = newsArray.length;
+	var newsInterval = 3000;
+	
+	$('h1').after('<ul id="news-feed"></ul>');
+	
+	// add the items in the array to a list	
+	for(i=0; i < newsLength; i++){
+		$('#news-feed').append('<li>'+newsArray[i]+'</li>');
+	}
+	
+	function slideArticle() {
+	$('#news-feed li:last').clone().prependTo('#news-feed').css('display','none');
+	$('#news-feed li:first').fadeIn(1000, function(){
+		$(this).css('background','#dedede').delay(1000).slideDown('fast', function(){
+			$(this).css('background','#E9F7D4');
+		});
+	});
+	$('#news-feed li:last').fadeOut().remove();
+	
+		//$('#news-feed li:first').fadeIn(100, function({
+		//$(this).css('background','#dedede');
+		//});
+	} 
+
+	setInterval(slideArticle, newsInterval);
+}); 
+
+</script>
+  <body>
+      <h1>jQuery Latest News</h1>
+  </body>
+</html>

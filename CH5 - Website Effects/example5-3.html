@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+<style>
+.recipe {display:none;}
+</style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+   <script type="text/javascript">
+$(document).ready(function(){
+
+$('.recipe-name').bind('click', function() {
+  $('.recipe').show();
+});
+});
+</script>
+</head>
+<body>
+<a class="recipe-name" href="#">Key Lime Pie</a>
+<div class="recipe">Key lime pie is an American dessert made of key lime juice, egg yolks, and sweetened condensed milk in a pie crust.</div>
+
+</body>
+</html>

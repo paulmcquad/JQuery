@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;}
+ .advanced {display:none;padding:3px;border:1px solid #ccc;width:300px;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+   <script type="text/javascript">
+  $(document).ready(function(){
+    $('.advanced-search').bind('click',function(){
+    $('.advanced').slideToggle();
+    }); 
+  });  
+
+  </script>
+  <body>
+  	
+  	<div id="search">
+  		<h1>Johhny's Superstore</h1>
+  		<input type="text" width="60" /> <input type="submit" value="search"/><br/>
+  		<a href="#" class="advanced-search">Advanced Search</a>
+  		<div class="advanced">
+  		<input type="radio" name="category"/> Clothing<br/>
+  		<input type="radio" name="category"/> Electronics<br/>
+  		<input type="checkbox" name="sale"/> Clearance Only<br/>
+  		</div>
+  	</div>    
+  </body>
+</html>
+
+

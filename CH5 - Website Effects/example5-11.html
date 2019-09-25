@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;}
+  ul#nav {list-style-type:none;margin:10px 0 10px;padding:0;}
+  ul#nav li {float:left;width:30px;}
+  ul#nav li a {text-decoration:none;background:#05609A;color:#fff;padding:5px;}
+  ul#nav li a.active {background:#B4F114;}
+  .container {position:relative;height:250px;width:400px;}
+  .slide-container {position: absolute;top: 0; left: 0;}
+  .slides {float:right;}
+  .slide-text {display:none;font-size:18px;}
+  img {border:0;}
+  
+
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="js/jquery.easing.v1.3.js"></script>
+  
+  <script type="text/javascript">
+	$(document).ready(function(){
+	
+	$('#news').find('.politics').css('border','1px solid red').end().find('.finance').hide().end().find('.local').css('border','1px solid blue');			
+	
+	}); 
+	</script>
+  <body>
+      <h1>jQuery Images Galore.<//h1>
+    <div class="container">
+    	<div id="news">
+    		<div class="politics">Politics</div>
+    		<div class="sports">Sports</div>
+    		<div class="finance">Finance</div>
+    		<div class="world">World</div>
+    		<div class="local">Local</div>
+    	</div>
+    </div>   
+  </body>
+</html>

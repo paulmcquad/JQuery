@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;}
+  ul#nav {list-style-type:none;margin:10px 0 10px;padding:0;}
+  ul#nav li {float:left;width:30px;}
+  ul#nav li a {text-decoration:none;background:#05609A;color:#fff;padding:5px;}
+  ul#nav li a.active {background:#B4F114;}
+  .slide-image {width:400px;height:300px;border:2px solid #05609A;overflow:hidden;}
+  .slide-image img {display:none;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+var slideArray =["ansel_adams1.jpg","ansel_adams2.jpg","ansel_adams3.jpg","ansel_adams4.jpg","ansel_adams5.jpg"];
+
+$('.container').after('<div class="slide-image"></div>');
+$('.slide-image').html('<img src="images/'+slideArray[0]+'"/>');
+$('.slide-image').after('<ul id="nav"></ul>');
+var slideLength = slideArray.length;
+
+for(i=0; i < slideLength; i++){
+	var slideText = i + 1;
+	$('#nav').append('<li><a href="#" rel="'+slideText+'">'+slideText+'</a></li>');
+}
+
+$('#nav li a').bind('click', function(){
+	var numSlide = $(this).attr('rel');
+	$('.slide-image').html('<img src="images/ansel_adams'+numSlide+'.jpg"/>');
+	$('.slide-image img').fadeIn(1000);
+	$('#nav li a').removeClass('active');
+	$(this).addClass('active');
+}); 
+}); 
+</script>
+  <body>
+    <div class="container">
+      <h1>jQuery Images Galore.<//h1>
+    </div>   
+  </body>
+</html>

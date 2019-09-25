@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  body {font-family:arial;}
+ .message {padding:.8em;margin-bottom: 1em;border: 2px solid #ddd;background: #FFF6BF;color: #514721;border-color: #FFD324;display:none;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+   <script type="text/javascript">
+$(document).ready(function(){
+
+ var messageCookie = document.cookie;   
+ if (messageCookie) {
+   // if message cookie is present, then hide special offer link
+   $('.special-offer').hide();
+   console.log('User has already seen offer!');
+ }
+ else {
+   // do nothing
+ }
+
+
+
+  $('.special-offer').bind('click', function(){
+    $('.message').show(hideMessage); 
+  });
+  
+  $('.hide').bind('click', function(){
+    $('.message').hide(hideMessage); 
+  });
+     
+  function hideMessage() {
+    var expirDate=new Date();
+    expirDate.setDate(expirDate.getDate()+30);
+    document.cookie = "message=yes;expires="+expirDate.toUTCString();
+  }
+  
+  
+});  
+
+  </script>
+  <body>
+  	<a href="#" class="special-offer">View this special offer!</a>
+	<div class="message">Special Notice for Members! 50% off your first online purchase.<br/>
+	<a href="#" class="hide">Hide this message</a></div>    
+  </body>
+</html>
+
+

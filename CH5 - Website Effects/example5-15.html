@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body {font-family:arial;}
+ul#nav {list-style-type:none;margin:10px 0 10px;padding:0;}
+ul#nav li {float:left;width:30px;}
+ul#nav li a {text-decoration:none;background:#05609A;color:#fff;padding:5px;}
+ul#nav li a.active {background:#B4F114;}
+.container {position:relative;height:250px;width:400px;border:1px solid #333;overflow:hidden;}
+.slide-container {position: absolute;top: 0; left: 0;}
+.slides {float:right;}
+.slide-text {display:none;font-size:18px;}
+img {border:0;}
+.textStrip {top:0px;
+display:block;
+position:absolute;
+left:-400px;
+padding:5px;
+background:#333333;
+opacity:.9;
+color:#ffffff;
+width:100%;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+// Setup arrays to hold information for slideshow
+var slideArray = ["photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg"];
+var textArray = ["Rusty Cable.","Watch Dogs.","Plant Sink.","Urban Cowboy"];
+var urlArray = ["http://www.google.com", "http://www.onerutter.com", "http://www.flickr.com", "http://www.facebook.com"];
+
+// Add the HTML to the DOM
+$('.container').append('<div class="slide-container" />');
+$('.container').after('<ul id="nav" class="clearfix"></ul>');
+
+// Loop thru the array and add the images to the DOM
+for(i=0; i < slideArray.length; i++){
+	var slideNum = i + 1;
+	$('#nav').append('<li><a href="#" rel="'+slideNum+'">'+slideNum+'</a></li>');
+	var slideInfo = '<div class="slide-image'+slideNum+' slides">';
+	slideInfo += '<a href="'+urlArray[i]+'">';
+	slideInfo += '<div class="slide-text activeInfo'+[i]+'">'+textArray[i]+'</div>';
+	slideInfo += '<img src="images/'+slideArray[i]+'"/></a></div>';
+	$('.slide-container').append(slideInfo);
+}
+
+// Setup variables
+var slideTotal = 4;
+var slideWidth = 400;	
+var slideContainer = slideWidth * slideTotal;
+
+// Assign width to slide-container
+$(".slide-container").css({'width' : slideContainer});
+
+// Setup click event to make slideshow animate
+$('#nav li a').bind('click', function(){
+	$('#nav li a').removeClass('active');
+	$(this).addClass('active');
+	$(".slide-text").css({
+	'top':'-100px',
+	'right':'0px'
+	});
+	$(".slide-text").stop();
+	$(".slide-text").clearQueue();
+
+	var active = $('#nav li a.active').attr("rel") - 1;	
+	var slidePos = active * slideWidth; 
+	var slideNum = $('#nav li a.active').attr("rel");
+
+	$(".slide-container").animate({
+		left: -slidePos
+		},1000, function(){
+			$('.slide-image'+slideNum+' .slide-text').addClass('textStrip').animate({
+				top:0,
+				left:slidePos,
+				right:0
+				}, 1000, function(){
+				$('.slide-text').delay(5000).animate({
+					top:-100
+					}, 1000);
+				});
+		});
+
+	}); 
+}); 
+</script>
+<body>
+<h1>jQuery Images Galore.<//h1>
+<div class="container">
+</div>   
+</body>
+</html>
